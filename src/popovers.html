@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tables | قالب ادمین تلویندو</title>
+</head>
+
+<body
+  x-data="{ page: 'Tables', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+  x-init="
+          darkMode = JSON.parse(localStorage.getItem('darkMode'));
+          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+  :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}">
+  <!-- ===== Preloader Start ===== -->
+  <include src="./partials/preloader.html"></include>
+  <!-- ===== Preloader End ===== -->
+
+  <!-- ===== Page Wrapper Start ===== -->
+  <div class="flex h-screen overflow-hidden ltr:flex-row-reverse">
+    <!-- ===== Sidebar Start ===== -->
+    <include src="./partials/sidebar.html"></include>
+    <!-- ===== Sidebar End ===== -->
+
+    <!-- ===== Content Area Start ===== -->
+    <div class="flex flex-col flex-1 relative overflow-x-hidden overflow-y-auto">
+      <!-- ===== Header Start ===== -->
+      <include src="./partials/header.html" />
+      <!-- ===== Header End ===== -->
+
+      <!-- ===== Main Content Start ===== -->
+      <main>
+        <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+          <!-- Breadcrumb Start -->
+          <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <h2 class="text-title-md2 font-bold text-black dark:text-white">
+              پاپ اور ها
+            </h2>
+
+            <nav>
+              <ol class="flex items-center gap-2">
+                <li>
+                  <a class="font-medium" href="index.html">داشبورد/</a>
+                </li>
+                <li class="font-medium text-primary">پاپ اور ها</li>
+              </ol>
+            </nav>
+          </div>
+          <!-- Breadcrumb End -->
+
+          <div class="flex flex-col gap-7.5">
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <div class="border-b border-stroke px-4 py-4 dark:border-strokedark sm:px-6 xl:px-7.5">
+                <h3 class="font-medium text-black dark:text-white">
+                 پاپ اور در چهار جهت
+                </h3>
+              </div>
+
+              <div class="p-4 sm:p-5 xl:p-7.5">
+                <div class="-mx-4 flex flex-wrap justify-center">
+                  <div class="w-full px-4 sm:w-1/2 xl:w-1/4">
+                    <div class="mt-10 text-center sm:mb-60">
+                      <div x-data="{popover: false}" @click.outside="popover = false" class="relative inline-block">
+                        <button @click.prevent="popover = !popover" class="inline-flex rounded-md bg-primary py-2.5 px-5 font-medium text-white">
+                         پاپ اور در پایین
+                        </button>
+                        <div x-show="popover" class="absolute top-full left-1/2 z-20 mt-3 w-max max-w-[311px] -translate-x-1/2 rounded bg-white drop-shadow-5 dark:bg-meta-4">
+                          <span class="absolute -top-1.5 left-1/2 -z-10 h-4 w-4 -translate-x-1/2 rotate-45 rounded-sm bg-white dark:bg-meta-4"></span>
+                          <div class="border-b border-stroke p-3 dark:border-strokedark">
+                            <h4 class="text-center text-title-sm font-semibold text-black dark:text-white">
+                             تایتل پاپ اور
+                            </h4>
+                          </div>
+                          <div class="py-4.5 px-5 text-center">
+                            <p class="font-medium">
+                       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full px-4 sm:w-1/2 xl:w-1/4">
+                    <div class="mt-10 text-center sm:mb-60">
+                      <div x-data="{popover: false}" @click.outside="popover = false" class="relative inline-block">
+                        <button @click.prevent="popover = !popover" class="inline-flex rounded-md bg-primary py-2.5 px-5 font-medium text-white">
+                         پاپ اور در راست
+                        </button>
+                        <div x-show="popover" class="absolute top-0 left-full z-20 ml-3 w-max max-w-[311px] rounded bg-white drop-shadow-5 dark:bg-meta-4" style="display: none;">
+                          <span class="absolute -left-1.5 top-4 -z-10 h-4 w-4 rotate-45 rounded-sm bg-white dark:bg-meta-4"></span>
+                          <div class="border-b border-stroke p-3 dark:border-strokedark">
+                            <h4 class="text-center text-title-sm font-semibold text-black dark:text-white">
+                             تایتل پاپ اور
+                            </h4>
+                          </div>
+                          <div class="py-4.5 px-5 text-center">
+                            <p class="font-medium">
+                       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full px-4 sm:w-1/2 xl:w-1/4">
+                    <div class="mt-10 text-center sm:mb-60">
+                      <div x-data="{popover: false}" @click.outside="popover = false" class="relative inline-block">
+                        <button @click.prevent="popover = !popover" class="inline-flex rounded-md bg-primary py-2.5 px-5 font-medium text-white">
+                         پاپ اور در بالا
+                        </button>
+                        <div x-show="popover" class="absolute bottom-full left-1/2 z-20 mb-3 w-max max-w-[311px] -translate-x-1/2 rounded bg-white drop-shadow-5 dark:bg-meta-4" style="display: none;">
+                          <span class="absolute -bottom-1.5 left-1/2 -z-10 h-4 w-4 -translate-x-1/2 rotate-45 rounded-sm bg-white dark:bg-meta-4"></span>
+                          <div class="border-b border-stroke p-3 dark:border-strokedark">
+                            <h4 class="text-center text-title-sm font-semibold text-black dark:text-white">
+                             تایتل پاپ اور
+                            </h4>
+                          </div>
+                          <div class="py-4.5 px-5 text-center">
+                            <p class="font-medium">
+                       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full px-4 sm:w-1/2 xl:w-1/4">
+                    <div class="mt-10 text-center sm:mb-60">
+                      <div x-data="{popover: false}" @click.outside="popover = false" class="relative inline-block">
+                        <button @click.prevent="popover = !popover" class="inline-flex rounded-md bg-primary py-2.5 px-5 font-medium text-white">
+                         پاپ اور در چپ
+                        </button>
+                        <div x-show="popover" class="absolute top-0 right-full z-20 mr-3 w-max max-w-[311px] rounded bg-white drop-shadow-5 dark:bg-meta-4" style="display: none;">
+                          <span class="absolute -right-1.5 top-4 -z-10 h-4 w-4 rotate-45 rounded-sm bg-white dark:bg-meta-4"></span>
+                          <div class="border-b border-stroke p-3 dark:border-strokedark">
+                            <h4 class="text-center text-title-sm font-semibold text-black dark:text-white">
+                             تایتل پاپ اور
+                            </h4>
+                          </div>
+                          <div class="py-4.5 px-5 text-center">
+                            <p class="font-medium">
+                       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <div class="border-b border-stroke px-4 py-4 dark:border-strokedark sm:px-6 xl:px-7.5">
+                <h3 class="font-medium text-black dark:text-white">
+                 پاپ اور همراه با دکمه
+                </h3>
+              </div>
+
+              <div class="p-4 sm:p-5 xl:p-7.5">
+                <div class="-mx-4 flex flex-wrap">
+                  <div class="w-full px-4 sm:w-1/2 xl:w-1/4">
+                    <div class="mt-10 mb-60">
+                      <div x-data="{popover: false}" @click.outside="popover = false" class="relative inline-block">
+                        <button @click.prevent="popover = !popover" class="inline-flex rounded-md bg-primary py-2.5 px-5 font-medium text-white">
+                         پاپ اور متن
+                        </button>
+                        <div x-show="popover" class="absolute right-full top-0 z-20 ml-3 w-max max-w-[533px] rounded-md bg-white p-4 font-medium drop-shadow-5 dark:bg-meta-4 sm:p-5 xl:p-7.5" style="display: none;">
+                          <span class="absolute -left-1 top-4 -z-10 h-2 w-2 rotate-45 rounded-r-sm bg-white dark:bg-meta-4"></span>
+                          <h4 class="mb-4 text-title-md font-bold text-black dark:text-white">
+                            این نکته را اضافه می کنید؟
+                          </h4>
+                          <p class="font-medium">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                          </p>
+                          <p class="mt-4 font-medium">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                          </p>
+                          <div class="mt-6 flex items-center gap-4">
+                            <button class="inline-block rounded bg-primary py-1 px-7.5 font-medium text-white hover:bg-opacity-90">
+                              بله
+                            </button>
+                            <button class="inline-block rounded bg-body py-1 px-7.5 font-medium text-white hover:bg-opacity-90">
+                              خیر
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- ===== Main Content End ===== -->
+    </div>
+    <!-- ===== Content Area End ===== -->
+  </div>
+  <!-- ===== Page Wrapper End ===== -->
+</body>
+
+</html

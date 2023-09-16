@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tables | قالب ادمین تلویندو</title>
+
+</head>
+
+<body
+  x-data="{ page: 'Tables', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+  x-init="
+          darkMode = JSON.parse(localStorage.getItem('darkMode'));
+          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+  :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}">
+  <!-- ===== Preloader Start ===== -->
+  <include src="./partials/preloader.html"></include>
+  <!-- ===== Preloader End ===== -->
+
+  <!-- ===== Page Wrapper Start ===== -->
+  <div class="flex h-screen overflow-hidden ltr:flex-row-reverse">
+    <!-- ===== Sidebar Start ===== -->
+    <include src="./partials/sidebar.html"></include>
+    <!-- ===== Sidebar End ===== -->
+
+    <!-- ===== Content Area Start ===== -->
+    <div class="flex flex-col flex-1 relative overflow-x-hidden overflow-y-auto">
+      <!-- ===== Header Start ===== -->
+      <include src="./partials/header.html" />
+      <!-- ===== Header End ===== -->
+
+      <!-- ===== Main Content Start ===== -->
+      <main>
+        <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+          <!-- Breadcrumb Start -->
+          <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <h2 class="text-title-md2 font-bold text-black dark:text-white">
+              عکس ها
+            </h2>
+
+            <nav>
+              <ol class="flex items-center gap-2">
+                <li>
+                  <a class="font-medium" href="index.html">داشبورد/</a>
+                </li>
+                <li class="font-medium text-primary">عکس ها</li>
+              </ol>
+            </nav>
+          </div>
+          <!-- Breadcrumb End -->
+
+          <div class="flex flex-col gap-7.5">
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <div class="border-b border-stroke px-4 py-4 dark:border-strokedark sm:px-6 xl:px-7.5">
+                <h3 class="font-medium text-black dark:text-white">
+                  تصویر واکنش گرا
+                </h3>
+              </div>
+
+              <div class="p-4 sm:p-6 xl:p-10">
+                <div class="relative">
+                  <div id="pane" class="overflow-hidden" style="cursor: nesw-resize;">
+                    <img src="./images/cover/cover-02.jpg" alt="Cover">
+                  </div>
+                  <div id="ghostpane" class="absolute left-0 top-0 duration-300 ease-in-out"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <div class="border-b border-stroke px-4 py-4 dark:border-strokedark sm:px-6 xl:px-7.5">
+                <h3 class="font-medium text-black dark:text-white">
+                 گرید
+                </h3>
+              </div>
+
+              <div class="p-4 sm:p-6 xl:p-10">
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 xl:gap-10">
+                  <div>
+                    <img src="./images/cover/cover-03.jpg" alt="Cover">
+                  </div>
+                  <div>
+                    <img src="./images/cover/cover-04.jpg" alt="Cover">
+                  </div>
+                  <div>
+                    <img src="./images/cover/cover-05.jpg" alt="Cover">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- ===== Main Content End ===== -->
+    </div>
+    <!-- ===== Content Area End ===== -->
+  </div>
+  <!-- ===== Page Wrapper End ===== -->
+</body>
+
+</html

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tables | قالب ادمین تلویندو</title>
+</head>
+
+<body
+  x-data="{ page: 'Tables', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+  x-init="
+          darkMode = JSON.parse(localStorage.getItem('darkMode'));
+          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+  :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}">
+  <!-- ===== Preloader Start ===== -->
+  <include src="./partials/preloader.html"></include>
+  <!-- ===== Preloader End ===== -->
+
+  <!-- ===== Page Wrapper Start ===== -->
+  <div class="flex h-screen overflow-hidden ltr:flex-row-reverse">
+    <!-- ===== Sidebar Start ===== -->
+    <include src="./partials/sidebar.html"></include>
+    <!-- ===== Sidebar End ===== -->
+
+    <!-- ===== Content Area Start ===== -->
+    <div class="flex flex-col flex-1 relative overflow-x-hidden overflow-y-auto">
+      <!-- ===== Header Start ===== -->
+      <include src="./partials/header.html" />
+      <!-- ===== Header End ===== -->
+
+      <!-- ===== Main Content Start ===== -->
+      <main>
+        <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+          <!-- Breadcrumb Start -->
+          <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <h2 class="text-title-md2 font-bold text-black dark:text-white">
+            کارت ها
+            </h2>
+
+            <nav>
+              <ol class="flex items-center gap-2">
+                <li>
+                  <a class="font-medium" href="index.html">داشبورد/</a>
+                </li>
+                <li class="font-medium text-primary">کارت ها</li>
+              </ol>
+            </nav>
+          </div>
+          <!-- Breadcrumb End -->
+
+          <div class="grid grid-cols-1 gap-7.5 sm:grid-cols-2 xl:grid-cols-3">
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <div class="flex items-center gap-3 py-5 px-6">
+                <div class="h-10 w-10 rounded-full">
+                  <img src="./images/user/user-11.png" alt="User">
+                </div>
+                <div>
+                  <h4 class="font-medium text-black dark:text-white">
+                    محمد دادخواه
+                  </h4>
+                  <p class="text-xs font-medium">نویسنده</p>
+                </div>
+              </div>
+
+              <a href="#" class="block px-4">
+                <img src="./images/cards/cards-01.png" alt="Cards">
+              </a>
+
+              <div class="p-6">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                  <a href="#">موضوع کارت</a>
+                </h4>
+                <p class="font-medium">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                </p>
+              </div>
+            </div>
+
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <div class="flex items-center gap-3 py-5 px-6">
+                <div class="h-10 w-10 rounded-full">
+                  <img src="./images/user/user-12.png" alt="User">
+                </div>
+                <div>
+                  <h4 class="font-medium text-black dark:text-white">
+                   سینا صادقی
+                  </h4>
+                  <p class="text-xs font-medium">طراح سایت</p>
+                </div>
+              </div>
+
+              <a href="#" class="block px-4">
+                <img src="./images/cards/cards-02.png" alt="Cards">
+              </a>
+
+              <div class="p-6">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                  <a href="#">موضوع کارت</a>
+                </h4>
+                <p class="font-medium">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                </p>
+              </div>
+            </div>
+
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <div class="flex items-center gap-3 py-5 px-6">
+                <div class="h-10 w-10 rounded-full">
+                  <img src="./images/user/user-13.png" alt="User">
+                </div>
+                <div>
+                  <h4 class="font-medium text-black dark:text-white">
+                   شفیق سادات
+                  </h4>
+                  <p class="text-xs font-medium">فرانت اند</p>
+                </div>
+              </div>
+
+              <a href="#" class="block px-4">
+                <img src="./images/cards/cards-03.png" alt="Cards">
+              </a>
+
+              <div class="p-6">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                  <a href="#">موضوع کارت</a>
+                </h4>
+                <p class="font-medium">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="mt-10 mb-7.5 text-title-md2 font-bold text-black dark:text-white">
+          کارت ها 
+          </h2>
+
+          <div class="grid grid-cols-1 gap-7.5 sm:grid-cols-2 xl:grid-cols-3">
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <a href="#" class="block px-4 pt-4">
+                <img src="./images/cards/cards-04.png" alt="Cards">
+              </a>
+
+              <div class="p-6">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                  <a href="#">موضوع کارت</a>
+                </h4>
+                <p class="font-medium">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                </p>
+              </div>
+            </div>
+
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <a href="#" class="block px-4 pt-4">
+                <img src="./images/cards/cards-05.png" alt="Cards">
+              </a>
+
+              <div class="p-6">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                  <a href="#">موضوع کارت</a>
+                </h4>
+                <p class="font-medium">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                </p>
+              </div>
+            </div>
+
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <a href="#" class="block px-4 pt-4">
+                <img src="./images/cards/cards-06.png" alt="Cards">
+              </a>
+
+              <div class="p-6">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                  <a href="#">موضوع کارت</a>
+                </h4>
+                <p class="font-medium">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="mt-10 mb-7.5 text-title-md2 font-bold text-black dark:text-white">
+          کارت ها
+          </h2>
+
+          <div class="grid grid-cols-1 gap-7.5 sm:grid-cols-2 xl:grid-cols-3">
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <div class="border-b border-stroke p-5 px-7.5 dark:border-strokedark">
+                <h4 class="text-xl font-semibold text-black dark:text-white">
+                  <a href="#">موضوع کارت</a>
+                </h4>
+              </div>
+              <div class="px-7.5 pt-6 pb-9">
+                <p class="font-medium">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                </p>
+              </div>
+            </div>
+
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <div class="border-b border-stroke p-5 px-7.5 dark:border-strokedark">
+                <h4 class="text-xl font-semibold text-black dark:text-white">
+                  <a href="#">موضوع کارت</a>
+                </h4>
+              </div>
+              <div class="px-7.5 pt-6 pb-9">
+                <p class="font-medium">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                </p>
+              </div>
+            </div>
+
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+              <div class="border-b border-stroke p-5 px-7.5 dark:border-strokedark">
+                <h4 class="text-xl font-semibold text-black dark:text-white">
+                  <a href="#">موضوع کارت</a>
+                </h4>
+              </div>
+              <div class="px-7.5 pt-6 pb-9">
+                <p class="font-medium">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- ===== Main Content End ===== -->
+    </div>
+    <!-- ===== Content Area End ===== -->
+  </div>
+  <!-- ===== Page Wrapper End ===== -->
+</body>
+
+</html
